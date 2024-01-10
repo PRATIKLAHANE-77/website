@@ -1,28 +1,45 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+<div>
+    <Header @contact-us-clicked="clickedContact"/>
+    <ContactUs v-if="scroll == true" :scroll="scroll"/>
+    
+</div>
+
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import Header from './components/TheHeader.vue'
+import ContactUs from './components/ContactUs.vue';
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+    name: 'App',
+    components: {
+    Header,
+    ContactUs
+},
+data() {
+    return{ 
+        ContactUs:false,
+        scroll:false,
+    }
+},
+methods:{
+    clickedContact() {
+        this.scroll = true;
+       
+        
+    }
+
+
+
+}
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+
+<style scoped>
+div{
+    position: relative;
+    top: -10px;
+
 }
 </style>
