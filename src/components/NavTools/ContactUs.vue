@@ -78,14 +78,17 @@ export default {
     props: {
         scroll: Boolean
     },
-    mounted() {
-        if (this.scroll == true) {
-            const contactusform = document.getElementById("contact-us-form");
+    watch: {
+    scroll(newScrollValue) {
+      if (newScrollValue) {
+        const contactusform = document.getElementById("contact-us-form");
             contactusform.scrollIntoView({
                 behavior: 'smooth'
             });
-        }
-    }
+            this.$emit('reached-to-the-page');
+      }
+    },
+  },
 
 }
 </script>

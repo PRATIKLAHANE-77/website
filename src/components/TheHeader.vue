@@ -21,7 +21,7 @@
             </li>
             <li>
                 <!-- <a href="#contact us"  @click="scrollToContactForm" @mouseover="showDialogue('contact us')">contact us <i :class="{'fa-solid fa-circle-chevron-down': title !== 'contact us', 'fa-solid fa-circle-chevron-up': title === 'contact us'}"></i></a> -->
-                <a href="#contact us" @click="scrollToContactForm" @mouseover="isdialogue = false">contact us</a>
+                <a href="#contact-us" @click="scrollToContactForm" @mouseover="isdialogue = false">contact us</a>
             </li>
         </ul>
         <DialogueBox v-if="isdialogue" @click="showDialogue">
@@ -47,7 +47,7 @@
 
 <script>
 import DialogueBox from './DialogueBox.vue';
-import AboutUs from './AboutUs.vue';
+import AboutUs from './NavTools/AboutUs.vue';
 export default {
     name: 'HeaderView',
     components: {
@@ -88,6 +88,10 @@ export default {
     margin: 0px;
 }
 
+nav ul li h2 {
+    color: #3e8284;
+}
+
 h1 {
     text-align: center;
 }
@@ -125,7 +129,7 @@ h1 {
 
 nav {
     height: 110px;
-    background-color: aliceblue;
+    background-color: white;
 }
 
 ul {
@@ -137,7 +141,7 @@ ul {
 
 a {
     text-decoration: none;
-    color: #2B0060;
+    color: black;
     font: 18px proxima_novasemibold;
     font-weight: bold;
 
